@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap'); // font-family: 'Be Vietnam', sans-serif;
+@import 'projects';
+
+$green-blue: #6ab072;
+$green-blue-lighter: #92c799;
+$green-blue-transparant: #6ab072a8;
+$green-blue-bg: #b8d9bc41;
+
+html,
+body {
+    width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: 'Be Vietnam', sans-serif;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    background-color: $green-blue-transparant;
+    z-index: 1;
+
+    ul {
+        width: 80%;
+        margin: 0 auto;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            padding: 10px;
+        }
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+.toggle {
+    display: none;
+}
+
+#home {
+    height: 50vh;
+    background-image: url("../images/desk.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1em;
+}
+
+#me,
+#becode,
+#projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 10px;
+    font-size: 0.8em;
+}
+
+#projects {
+    @include project;
+}
+
+#me {
+    background-color: $green-blue-bg;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+    img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+}
+
+footer {
+    display: flex;
+    align-items: center;
+
+    .copyright {
+        justify-content: flex-start;
+        margin-left: 10px;
+        font-size: 0.6em;
+    }
+}
+
+#goTop {
+    position: fixed;
+    background-color: transparent;
+    border: none;
+    bottom: 20px;
+    right: 20px;
+
+    i {
+        font-size: 25px;
+        color: black;
+    }
+}
+
+.italic {
+    font-style: italic;
+}
+
+h1 {
+    margin-bottom: 0px;
+}
+
+hr {
+    width: 90vw;
+    border: 1px solid $green-blue-lighter;
+}
+
+.icon-black {
+    color: black;
+    font-size: 2em;
+}
+
+.w40.images.italic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 10px 0;
+}
+
+.project-image {
+    img {
+        max-width: 100%;
+    }
+}
+
+/* small screens (toggle only required for mobile screens) */
+@media only screen and (max-width: 640px) {
+    .toggle {
+        display: block;
+        padding: 10px 30px;
+        text-align: right;
+        color: black;
+        font-size: 20px;
+        background-color: $green-blue-transparant;
+    }
+
+    nav {
+        ul {
+            display: none;
+
+            li {
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+
+    .active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* medium screens */
+@media only screen and (min-width: 641px) {
+    nav {
+        ul {
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                font-size: 1.3em;
+            }
+        }
+    }
+
+    #home,
+    #projects,
+    #me,
+    #becode {
+        min-height: 100vh;
+        padding: 50px 30px 30px 30px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h4 {
+        font-size: 1.3em;
+    }
+
+    p {
+        font-size: 1.3em;
+    }
+
+    .images {
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    #goTop {
+        cursor: pointer;
+
+        i {
+            font-size: 40px;
+
+            &:hover {
+                color: #6ab072
+            }
+        }
+    }
+}
+
+/* large screens */
+@media only screen and (min-width: 861px) {
+    h1 {
+        font-size: 4em;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 2.1em;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+
+    h4 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+
+    .images {
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    #home,
+    #projects,
+    #me,
+    #becode {
+        padding: 50px;
+    }
+
+    #me,
+    #becode {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .w40,
+        .w60 {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .w40 {
+            width: 40%;
+        }
+
+        .w60 {
+            width: 60%;
+        }
+    }
+
+    #me {
+        i {
+            font-size: 2em;
+            color: black;
+            padding: 5px;
+        }
+    }
+
+    .p-left {
+        padding-left: 50px;
+    }
+
+    #becode {
+        min-height: 0;
+        height: 90vh;
+        padding: 0 30px;
+
+        .w40 {
+            order: 2
+        }
+
+        .w60 {
+            order: 1
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+        }
+    }
+
+    footer {
+        height: 10vh;
+        font-size: 1.3em;
+        padding-left: 30px;
+    }
+
+    article {
+        height: 50vh;
+
+        .project-image {
+            border: 1px solid $green-blue;
+            overflow: hidden;
+            box-sizing: border-box;
+
+            img {
+                max-height: 50vh;
+                width: auto;
+            }
+    
+            a {
+                font-size: 1.5em;
+            }
+        }
+       
+        .project-info {
+            box-sizing: content-box;
+        }
+    }
+}

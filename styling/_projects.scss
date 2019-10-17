@@ -1,0 +1,56 @@
+@mixin project {
+    .project {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 20px;
+
+        .project-image {
+            width: 50vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project-info {
+            width: 50vw;
+            padding-left: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            h2 {
+                color: $green-blue;
+                margin: 0;
+            }
+
+            h3 {
+                color: $green-blue-lighter;
+                margin: 0;
+            }
+
+            a {
+                color: black;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .reversed {
+        text-align: right;
+
+        .project-image {
+            order: 2;
+        }
+
+        .project-info {
+            order: 1;
+            padding: 0 50px 0 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+        }
+    }
+}
