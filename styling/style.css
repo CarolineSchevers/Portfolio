@@ -439,6 +439,9 @@ hr {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
+  article .project-image:hover {
+    border: 3px solid #6ab072;
+  }
   article .project-image img {
     max-height: 50vh;
     width: auto;
