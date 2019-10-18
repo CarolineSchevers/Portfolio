@@ -331,6 +331,8 @@ hr {
             border: 1px solid $green-blue;
             overflow: hidden;
             box-sizing: border-box;
+            background-color: $green-blue-bg;
+
             &:hover {
                 border: 3px solid $green-blue;  
             }
